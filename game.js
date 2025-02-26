@@ -1,7 +1,7 @@
 const prompt = require("prompt-sync")();
 const choices = ["rock", "paper", "scissor"];
 
-let drawn = 0;
+let draw = 0;
 let youwin = 0;
 let compwin = 0;
 
@@ -14,9 +14,9 @@ while(!(choices.includes(yourchoice.trim().toLowerCase()))){
 }
 let comp_choice = Math.floor(Math.random() * choices.length);
 let comp = choices[comp_choice];
-console.log(comp)
+console.log(`Computer choice: ${comp}`) // to check computer choice 
 if(yourchoice === comp){
-    drawn = drawn+1;
+    draw = draw+1;
 }else if((yourchoice === "rock" && comp === "paper") || (yourchoice === "paper" && comp ==="scissor") || (yourchoice ==="scissor" && comp==="rock")){
     compwin=compwin+1;
 }else{
@@ -25,7 +25,7 @@ if(yourchoice === comp){
 }
 
 if(compwin == youwin){
-    console.log("Drawn");
+    console.log("Draw");
 }else if(compwin>youwin){
     console.log("Computer Win");
 }else{
